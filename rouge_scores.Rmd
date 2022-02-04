@@ -1,0 +1,49 @@
+---
+title: "Rouge Scores"
+author: "Soham Sajekar"
+output:
+  html_document:
+    df_print: paged
+---
+
+```{r}
+library(dplyr)
+library(tidyverse)
+library(lubridate)
+library(ggplot2)
+library(forcats)
+```
+
+```{r}
+data = read.csv("Data/rouge_scores.csv")
+# head(data)
+```
+
+```{r fig.width=10, fig.height=6, fig.align='center'}
+Rouge_plot <- data %>% 
+  filter(technique != "extractive summary") %>% 
+  ggplot(aes(x=Model, y=f1_score, fill=rouge_metric)) +
+  geom_bar(position="dodge", stat="identity") +
+  labs(title = "Rouge scores",
+       x = "Models",
+       y = "F1 score",
+       fill = "Evaluation Metric") +
+  # facet_wrap(~Model, scales = "free", nrow = 3) +
+  scale_fill_manual(values = c("#03c2a2", "#2b8597", "#4f67a2", "796295")) +
+  theme_bw() +
+  theme(legend.position = "right", 
+        legend.margin = margin(),
+        legend.justification = "center",
+        strip.text = element_text(
+        face = "bold",
+        hjust = 0,
+        size = 12,
+        margin = margin(.5, 0, .5, 0, "cm")),
+        strip.background = element_blank())
+Rouge_plot
+```
+
+```{r}
+ggsave(Rouge_plot, file = "Data/figures/Rouge_plot.jpg", dpi = 1000, width = 10, height = 6)
+```
+

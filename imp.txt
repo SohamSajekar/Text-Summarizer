@@ -1,0 +1,2 @@
+https://towardsdatascience.com/nlp-building-a-summariser-68e0c19e3a93
+https://nlpforhackers.io/textrank-text-summarization/
