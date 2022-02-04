@@ -1,6 +1,11 @@
 # Text-Summarizer
 Extractive text summarizer based sentence scoring algorithms.
 
+Team members and Roles
+1. Sanika Katekar: Implementing LSA technique for building text summarizer, Working on paraphrase generator collectively with other members
+2. Praveen Kumar Reddy: Implementing TF-IDF technique for building text summarizer, Working on paraphrase generator collectively with other members
+3. Soham Sajekar: Implementing LDA technique for building text summarizer, Working on paraphrase generator collectively with other members
+
 Through this project, we plan to address two of the challenging tasks in computational
 linguistics namely text summarization and paraphrasing, together. The task of identifying the
 most important parts of a long piece of text which preserves the key ideas and overall meaning,
